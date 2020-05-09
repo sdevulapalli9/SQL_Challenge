@@ -1,0 +1,43 @@
+#  SQL HOMEWORK 
+#  CREATE TABLE & IMPORT DATA
+#  EMPLOYEE TABLE
+
+employee
+--
+emp_no INTEGER PK 
+emp_title_id VARCHAR FK >- titles.title_id
+birth_date VARCHAR
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+#  DEPARTMENTS TABLE
+departments
+--
+dept_no VARCHAR PK 
+dept_name VARCHAR
+
+#  DEPARTMENT EMPLOYEES
+dept_employees
+--
+emp_no INTEGER PK FK - employee.emp_no
+dept_no VARCHAR PK FK - departments.dept_no
+
+# TITLES
+titles
+--
+title_id VARCHAR PK
+title VARCHAR
+
+# DEPARTMENT MANAGER
+deptmgr
+--
+dept_no VARCHAR PK FK - departments.dept_no
+emp_no INTEGER FK - employee.emp_no
+
+#  SALARIES 
+salaries
+--
+emp_no INTEGER PK FK - employee.emp_no
+salary INTEGER
